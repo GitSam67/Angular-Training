@@ -8,7 +8,6 @@ ng new customer-mf --create-application false --skip-tests
 
 ng g app customer-mfe --skip-tests --routing
 
-
  
 
 - Add a  component named Add a home component to the application. to the application.
@@ -31,6 +30,7 @@ const routes: Routes = [{
   component: CustomerListComponent
 }];
 ````
+
 
 - Now lets modify the app-routing.module.ts for Lazy Loading the CustomerModule as follows
 

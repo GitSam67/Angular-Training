@@ -1,0 +1,23 @@
+<h2>List of Customer List</h2>
+
+<input style="margin-bottom: 10px; margin-top: 10px; border-radius: 2%;" type="text" [(ngModel)]="searchTerm" (input)="filterCustomer()" placeholder="Search by Customer Name">
+
+<table class="table table-bordered table-striped table-warning">
+    <thead>
+        <tr class="table-dark">
+          <th>Customer Id</th>
+          <th>Customer Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+        </tr>
+    </thead>
+    <tbody>
+        <div *ngIf="filteredCustomers.length == 0" style="width: 100%; font-size:larger; margin: 10px;">No results found...!!</div>
+        <tr *ngFor="let customer of filteredCustomers">
+           <td>{{customer.CustomerId}}</td>
+           <td>{{customer.CustomerName}}</td>
+           <td>{{customer.Email}}</td>
+           <td>{{customer.Mobile}}</td>
+        </tr>
+    </tbody>
+</table>

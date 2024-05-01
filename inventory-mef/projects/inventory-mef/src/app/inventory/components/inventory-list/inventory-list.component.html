@@ -1,0 +1,23 @@
+<h1>The Inventory List</h1>
+
+<input style="margin-bottom: 10px; margin-top: 10px; border-radius: 2%;" type="text" [(ngModel)]="searchTerm" (input)="filterInventory()" placeholder="Search by Item Name">
+
+<table class="table table-bordered table-striped">
+   <thead class="table-danger">
+      <tr>
+         <th>Item Id</th>
+         <th>Item Name</th>
+         <th>Unit Quantity</th>
+         <th>Available Quantity</th>
+      </tr>
+   </thead>
+   <tbody class="table-dark">
+      <div *ngIf="filteredInventoryList.length == 0" style="width: 100%; font-size:larger; margin: 10px;">No results found...!!</div>
+      <tr *ngFor="let inventory of filteredInventoryList">
+          <td>{{inventory.ItemId}}</td>
+          <td>{{inventory.ItemName}}</td>
+          <td>{{inventory.UnitPrice}}</td>
+          <td>{{inventory.AvailableQuantity}}</td>
+      </tr>
+   </tbody>
+</table>
